@@ -15,7 +15,7 @@ import ErrorPage from './Components/ErrorPage';
 function App() {
   return (
     <div className="App">
-      <h2>Store</h2>
+      <h2>Store Room</h2>
     <BrowserRouter>
       <Navbar />
          <br />
