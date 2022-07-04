@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AuthService from '../services/authservice';
+import LoginService from '../../services/LoginService';
 import { useNavigate } from 'react-router-dom';
 import { Container, Col, Form, Row, FormGroup, Label, Input, Button } from 'reactstrap';
 
@@ -68,7 +68,7 @@ const Register = () => {
     e.preventDefault();
     setSuccessful(true);
     setMessage("");
-      AuthService.register(firstName,lastName, email, username, password,isActive)
+    LoginService.register(firstName,lastName, email, username, password,isActive)
       .then( 
         () => {
           alert('Sucess REGISTER API');

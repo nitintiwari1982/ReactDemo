@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../CSS/AddCategory.css';
+import '../../CSS/AddCategory.css';
 import { Container, Col, Form, Row, FormGroup, Label, Input, Button } from 'reactstrap';
 import {useNavigate} from 'react-router-dom';
 

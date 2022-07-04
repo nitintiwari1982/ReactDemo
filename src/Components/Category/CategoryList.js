@@ -1,8 +1,8 @@
 import React, { useEffect, useState} from "react"
 import axios from 'axios';
-import Table from '../Components/Table';
-import EmployeeService from '../services/DCandidateservices';
-import '../CSS/appglobal.css';
+import Table from '../Table';
+import DCandidateservices from '../../services/DCandidateservices';
+import '../../CSS/appglobal.css';
 import ReactPaginate from 'react-paginate';
 import { Input } from "reactstrap";
 
@@ -22,7 +22,7 @@ export default function Categorylist()
 
 function fetchData(){
   setMessage('');
-    EmployeeService.getCandidates()
+  DCandidateservices.getCandidates()
     .then((response) => {
         setBusiness(response.data);
     })

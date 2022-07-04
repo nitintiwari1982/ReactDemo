@@ -1,23 +1,11 @@
 import axios from 'axios';
-import authHeader from './auth-header';
 
-const EMPLOYEE_API_BASE_URL = "http://localhost:5000/api/DCandidate";
+const DCANDIDATE_API_BASE_URL = "http://localhost:5000/api/DCandidate";
 
-class EmployeeService {
+class DcandidateService {
 
-     authHeader() {
-        const user = JSON.parse(sessionStorage.getItem('user'));
-        if (user && user.token) {
-          alert(user.token);
-          return { Authorization: 'Bearer ' + user.token }
-        } else {
-          return {};
-        }
-      }
-
-      getCandidates()
+  async  getCandidates()
     {
-     // console.log('event raised');
         var _headers = {
             headers: {
                 'Accept': 'application/json',
@@ -36,24 +24,24 @@ class EmployeeService {
         {
         console.log('user not exists in session storage.');
         }
-        return axios.get(EMPLOYEE_API_BASE_URL+"/" , _headers );
+        return await axios.get(DCANDIDATE_API_BASE_URL+"/" , _headers );
     }
 
     createEmployee(employee){
-        return axios.post(EMPLOYEE_API_BASE_URL, employee);
+        return axios.post(DCANDIDATE_API_BASE_URL, employee);
     }
 
     getEmployeeById(employeeId){
-        return axios.get(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+        return axios.get(DCANDIDATE_API_BASE_URL + '/' + employeeId);
     }
 
     updateEmployee(employeeId, employee){
-        return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
+        return axios.put(DCANDIDATE_API_BASE_URL + '/' + employeeId, employee);
     }
 
     deleteEmployee(employeeId){
-        return axios.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+        return axios.delete(DCANDIDATE_API_BASE_URL + '/' + employeeId);
     }
 }
 
-export default new EmployeeService()
+export default new DcandidateService()

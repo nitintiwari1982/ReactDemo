@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom'
 import { Container, Col, Form, Row, FormGroup, Label, Input, Button } from 'reactstrap';
 import axios from 'axios'
-import '../CSS/AddCategory.css'
-import EmployeeService from '../services/DCandidateservices';
+import '../../CSS/AddCategory.css'
+import EmployeeService from '../../services/DCandidateservices';
 import {useNavigate} from 'react-router-dom';
 
 
